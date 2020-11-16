@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+// App file renders the Container.js which is the bult of the application
+import React from "react";
+// import Container from "./components/Container";
+import Wrapper from "./components/Wrapper";
+import Header from "./components/Header";
+import Container from "./components/Container";
+import Footer from "./components/Footer";
 
-function App() {
+function App() {  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Wrapper>       
+        <Header />
+        <Container />
+      </Wrapper>
+      <Footer />
     </div>
   );
+  
 }
+
 
 export default App;
