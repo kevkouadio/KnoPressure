@@ -1,10 +1,12 @@
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
 import Container from "../../components/Container";
 import Row from "../../components/Row";
 import Col from "../../components/Col";
 
 
 function Landing() {
+    const location = useLocation();
     return (
        <div>
             <Container>
@@ -32,11 +34,11 @@ function Landing() {
                     <Col size="col-lg-6">                                 
                         <p id="secondtext">Visit our Site and Track your Blood Pressure</p>
                         <p id="thirdtext"> Login if you are a member or Signup to become a member</p>
-                        <button type="login" className="btn btn-primary btn-md" id="login-btn">Login</button> 
+                        <Link to="/login" className={location.pathname === "/login"}><button type="login" className="btn btn-primary btn-md" id="login-btn">Login</button></Link>
                         <br/>
                         <br/>
                         <ul>
-                        <li><strong>SignUp:</strong> <a href="/">SignUp</a></li>
+                        <li><strong>SignUp:</strong> <Link to="/login">SignUp</Link></li>
                         </ul>
                     </Col>
                 </Row>
