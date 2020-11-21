@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import 'zingchart/es6';
 import ZingChart from 'zingchart-react';
 
-class Dynamic extends Component {
+class Chart extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -48,4 +48,4 @@ function randomData(count) {
   });
 }
 
-export default Dynamic;
+export default Chart;
