@@ -24,3 +24,28 @@ class Dynamic extends Component {
       </div>
     );
   }
+  componentDidMount() {
+    this.state.updater = setInterval(() => {
+      console.log(randomData(10));
+      this.setState({
+        series: {
+          values: randomData(10)
+        }
+      });
+    }, 1000);
+    
+
+  }
+  componentWillUnmount() {
+    window.clearInterval(this.state.updater);
+  }
+}
+
+// Random numbers from 0-100
+function randomData(count) {
+  return Array.from(new Array(count)).map(() => {
+    return Math.floor(Math.random() * 10);
+  });
+}
+
+export default Dynamic;
