@@ -11,7 +11,7 @@ class Chart extends Component {
         type: 'line',
       },
       series: [{
-        values: [4,5,3,4,5,3,5,4,11]
+        values: [200,180,170,160,150,140,130,120,100,90,80,70,60,50,40]
       }]
     }
     this.chart = React.createRef();
