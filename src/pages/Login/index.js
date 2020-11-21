@@ -6,7 +6,7 @@ import "./style.css";
 function App() { 
 
     const [email, setEmail] = useState (" ");
-    const [password, setPassword] = useState (" ");
+    const [password, setPassword] = useState ("");
 
     function validateForm() {
         return email.length > 0 && password.length > 0;
@@ -36,6 +36,7 @@ function App() {
                 </Form.Group>
                 <Button block size="lg" type="submit" disabled={!validateForm()}>Login</Button>
             </Form>
+            <div class="fb-login-button" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false" data-width=""></div>
         </div>
     );
 }

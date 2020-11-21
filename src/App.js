@@ -15,12 +15,10 @@ function App() {
     <Router>
       <div className="App">
         <Wrapper>       
-         
             <Route exact path="/" component={Landing} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/about" component={About} />
             <Route exact path="/Home" component={Home} />
-         
         </Wrapper>
       </div>
     </Router>
