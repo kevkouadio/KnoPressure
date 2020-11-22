@@ -25,14 +25,14 @@ class Chart extends Component {
     );
   }
   componentDidMount() {
-    this.state.updater = setInterval(() => {
-      console.log(randomData(10));
-      this.setState({
-        series: {
-          values: randomData(10)
-        }
-      });
-    }, 1000);
+    // this.state.updater = setInterval(() => {
+    //   console.log(randomData(10));
+    //   this.setState({
+    //     series: {
+    //       values: randomData(10)
+    //     }
+    //   });
+    // }, 1000);
     
 
   }

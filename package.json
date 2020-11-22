@@ -9,6 +9,7 @@
     "antd": "^4.8.4",
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
+    "html-to-react": "^1.4.5",
     "material-ui": "^0.20.2",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",

@@ -7,6 +7,7 @@ import Landing from "./pages/Landing";
 import Login from "./pages/Login";
 import About from "./pages/About";
 import Home from "./pages/Home";
+import Chart from "./components/Chart"
 import "./style.css"
 
 
@@ -16,6 +17,7 @@ function App() {
       <div className="App">
         <Wrapper>       
             <Route exact path="/" component={Landing} />
+            <Route exact path="/Chart" component={Chart} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/about" component={About} />
             <Route exact path="/Home" component={Home} />
