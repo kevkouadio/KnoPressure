@@ -2,12 +2,11 @@ import React from "react";
 import Row from "../../components/Row";
 import Container from "../../components/Container";
 import Col from "../../components/Col";
-import Navbar from "../../components/Navbar";
+
 
 function About(){
         return (
-            <div>
-              <Navbar />
+            <div>             
               <Container style={{ marginTop: 30 }}>
                 <Row>
                   <Col size="col-12">
