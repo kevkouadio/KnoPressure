@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import Container from "../../components/Container";
 import Row from "../../components/Row";
 import Col from "../../components/Col";
+import "./style.css"
 
 
 function Landing() {
@@ -24,14 +25,8 @@ function Landing() {
                             <p id="firsttext"> heart disease. heart attacks !!!!</p>
                             </Col>
                             </Row>
-                <Row>
-                    <Col size="col-lg-6">                                       
-                    <p id="secondtext">Understanding Blood Pressure Readings</p> 
-                    <img id="bloodpressure-chart" src={"./assets/images/blood pressure readings chart.jpg"} alt="bloodpressure-chart" 
-                                className="img-fluid"/>                      
-                         
-                    </Col>
-                    <Col size="col-lg-6">                                 
+                <Row>                    
+                    <Col size="col-lg-12" className="login">                                 
                         <p id="secondtext">Visit our Site and Track your Blood Pressure</p>
                         <p id="thirdtext"> Login if you are a member or Signup to become a member</p>
                         <Link to="/login" className={location.pathname === "/login"}><button type="login" className="btn btn-primary btn-md" id="login-btn">Login</button></Link>

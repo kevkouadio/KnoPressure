@@ -55,12 +55,21 @@ section ul a {
 
 #display-5 {
  font-size: 30px;
- color: #ffffff; 
+ color: #ffffff;
+ text-align: center; 
+}
+
+.img-fluid {
+  justify-content: center;
 }
 
 #heart {
  max-width: 100%; 
  height: 260px;
+}
+
+.login {
+  text-align: center;
 }
 
 #firsttext {
