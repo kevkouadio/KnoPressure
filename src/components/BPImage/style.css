@@ -1,0 +1,33 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+#bloodpressure {
+  float: left;
+  width: 50%;
+  padding: 20px;  
+}
+
+#emptycol { 
+  float: left;
+  width: 50%;
+  padding: 20px;
+  border-radius: 4px; 
+}
+
+#bloodpressure-chart {
+  overflow: auto;
+  max-width:100%;
+  height: 260px; 
+ }
+
+section {
+  margin-top: 70px;
+  margin-bottom: 25px;
+  border-bottom: 5px solid rgb(228, 137, 228);
+}
