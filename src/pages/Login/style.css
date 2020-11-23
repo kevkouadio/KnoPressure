@@ -1,88 +1,14 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  list-style: none;
-}
-
-html, body {
-  height:100%;
-}
-
 body {
-  font-size: 15px;  
-  text-align: center;
-  /* border-bottom: 10px solid purple; */
-  
+    background-color: #e83e8c;
 }
 
-/* set the padding for the page */
-.padding {
-  padding: 20px;
-}
+@media all and (min-width: 480px) {
+    .Login {
+        padding: 60px 0;
+    }
 
-.container-body {
-  min-height: 100%;
-  overflow: auto;  
-  width: 100%; 
-  margin-top: 10px;  
-  margin-left: 10px;
-  border-style: inset;
-  background-color: plum; 
-  /* color: #ffffff; */
-  color: rgb(17, 8, 17);
-  text-align: center;
-  border-bottom: 10px solid purple;
-}
-
-p {
-  text-align: center;
-  margin: 15px;
-}
-
-.btn-primary {
-  color: blueviolet;
-  background-color: blueviolet;  
-}
-
-
-
-/* set the color of the contact links */
-section ul a {
-  color: antiquewhite;
-}
-
-#display-5 {
- font-size: 30px;
- color: #ffffff;
- text-align: center; 
-}
-
-.img-fluid {
-  justify-content: center;
-}
-
-#heart {
- max-width: 100%; 
- height: 260px;
-}
-
-#firsttext {
-  font-size: 25px;
-  color:deeppink
-}
-
-#secondtext {
-  font-size: 25px;
-  color: black;
-}
-
-#bloodpressure-chart {
- max-width:100%;
- height: 260px; 
-}
-
-#thirdtext {
-  color: #ffffff; 
+    .Login form {
+        margin: 0 auto;
+        max-width: 320px;
+    }
 }

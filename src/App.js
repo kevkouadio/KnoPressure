@@ -7,6 +7,7 @@ import Landing from "./pages/Landing";
 import Login from "./pages/Login";
 import About from "./pages/About";
 import Home from "./pages/Home";
+import Chart from "./components/Chart";
 
 
 function App() {  
@@ -17,7 +18,7 @@ function App() {
         <Wrapper>     
          
             <Route exact path="/" component={Landing} />
-            <Route exact path="/landing" component={Landing} />
+            <Route exact path="/Chart" component={Chart} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/home" component={Home} />
             <Route exact path="/about" component={About} />           

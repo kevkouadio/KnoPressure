@@ -1,50 +1,45 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
-import Container from "../../components/Container";
-import Row from "../../components/Row";
-import Col from "../../components/Col";
-import "./style.css"
+import React, { useState } from "react";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import "./style.css";
 
+function Login() { 
 
-function Landing() {
-    const location = useLocation();
+    const [email, setEmail] = useState (" ");
+    const [password, setPassword] = useState ("");
+
+    function validateForm() {
+        return email.length > 0 && password.length > 0;
+    }
+    
+    function handleSubmit(event) {
+        event.preventDefault();
+    }
+
     return (
-       <div>
-            <Container>
-               <Row>
-                    <Col size="col-12"> 
-                          <h1 className="display-5" id="display-5">KnoPressure</h1>
-                            <img  id="heart" src={"./assets/images/heart-799138__340.webp"} alt="heart" 
-                                className="img-fluid"/>                        
-                    </Col>
-                    <Col size="col-12">
-                        <p>
-                                Hypertension is more dangerous than ever before.  Did you know you can lower your risk...
-                                If your blood pressure is too high, it puts extra strain on your blood vessels, heart and other organs, such as the brain, kidneys and eyes. Persistent high blood pressure can increase your risk of a number of serious and potentially life-threatening health conditions, such as: 
-                            </p>
-                            <p id="firsttext"> heart disease. heart attacks !!!!</p>
-                            </Col>
-                            </Row>
-                <Row>
-                    <Col size="col-lg-6">                                       
-                    <p id="secondtext">Understanding Blood Pressure Readings</p> 
-                    <img id="bloodpressure-chart" src={"./assets/images/blood pressure readings chart.jpg"} alt="bloodpressure-chart" 
-                                className="img-fluid"/>                      
-                         
-                    </Col>
-                    <Col size="col-lg-6">                                 
-                        <p id="secondtext">Visit our Site and Track your Blood Pressure</p>
-                        <p id="thirdtext"> Login if you are a member or Signup to become a member</p>
-                        <Link to="/login" className={location.pathname === "/login"}><button type="login" className="btn btn-primary btn-md" id="login-btn">Login</button></Link>
-                        <br/>
-                        <br/>
-                        <ul>
-                        <li><strong>SignUp:</strong> <Link to="/login">SignUp</Link></li>
-                        </ul>
-                    </Col>
-                </Row>
-            </Container>
+        <div className="Login">
+            <Form onSubmit={handleSubmit}>
+                <Form.Group size="lg" controlId="email">
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
+                    autoFocus
+                    type="email"
+                    value={email}
+                    onChange={ (e) => setEmail(e.target.value)} />
+                </Form.Group>
+                <Form.Group size="lg" controlId="password">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)} />
+                </Form.Group>
+                <Button block size="lg" type="submit" disabled={!validateForm()}>Login</Button>
+            </Form>
+            <div class="fb-login-button" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false" data-width=""></div>
         </div>
     );
-} 
-export default Landing;
+}
+
+
+export default Login;
