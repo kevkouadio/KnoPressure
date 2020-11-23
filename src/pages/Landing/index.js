@@ -12,7 +12,7 @@ function Landing() {
        <div>
             <Container>
                <Row>
-                    <Col size="col-12"> 
+                    <Col size="md-12"> 
                           <h1 className="display-5" id="display-5">KnoPressure</h1>
                             <img  id="heart" src={"./assets/images/heart-799138__340.webp"} alt="heart" 
                                 className="img-fluid"/>                        
@@ -26,7 +26,7 @@ function Landing() {
                             </Col>
                             </Row>
                 <Row>                    
-                    <Col size="col-lg-12" className="login">                                 
+                    <Col size="lg-12" className="login">                                 
                         <p id="secondtext">Visit our Site and Track your Blood Pressure</p>
                         <p id="thirdtext"> Login if you are a member or Signup to become a member</p>
                         <Link to="/login" className={location.pathname === "/login"}><button type="login" className="btn btn-primary btn-md" id="login-btn">Login</button></Link>
