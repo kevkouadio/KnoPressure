@@ -1,5 +1,5 @@
 import React from "react";
-import Col from "./components/Col";
+import Col from "../../components/Col";
 import "./style.css";
 
 function SearchForm() {
