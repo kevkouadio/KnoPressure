@@ -1,10 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+//import { NavLink } from "react-router-dom";
+import { useAuth } from "../../utils/auth";
 import "./style.css";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function Navbar() {
-  return (
+  const { isLoggedIn, logout } = useAuth();
+  //const links = [<BrandLink key="/" to="/" />];
+
+  if (isLoggedIn) {
+    return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link className="navbar-brand" to="/home">
         KnoPressure
@@ -18,10 +24,7 @@ function Navbar() {
             <Link
               to="/"
               className={
-                window.location.pathname === "/" || window.location.pathname === "/landing"
-                  ? "nav-link active"
-                  : "nav-link"
-              }
+                window.location.pathname === "/" ? "nav-link active": "nav-link"} onClick={logout}
             >
               Logout
             </Link>
@@ -46,6 +49,7 @@ function Navbar() {
       </div>
     </nav>
   );
+ }
 }
 
 export default Navbar;

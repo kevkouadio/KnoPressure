@@ -5,23 +5,29 @@ import Wrapper from "./components/Wrapper";
 import Landing from "./pages/Landing";
 import Login from "./pages/Login";
 import About from "./pages/About";
+import signUp from "./pages/signUp";
 import Home from "./pages/Home";
 import Chart from "./components/Chart";
+import { AuthProvider } from "./utils/auth";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 
 function App() {  
   return (
-    <Router>
+    <AuthProvider>
+      <Router>
       <div className="App">
         <Wrapper>  
         <Route exact path="/" component={Landing} />   
-            <Route exact path="/Chart" component={Chart} />
+            <ProtectedRoute exact path="/Chart" component={Chart} />
             <Route exact path="/login" component={Login} />
-            <Route exact path="/home" component={Home} />
-            <Route exact path="/about" component={About} />           
+            <Route exact path="/signup" component={signUp} />
+            <ProtectedRoute exact path="/home" component={Home} />
+            <ProtectedRoute exact path="/about" component={About} />           
         </Wrapper>
       </div>
-    </Router>
+      </Router>
+    </AuthProvider>
   );
   
 }

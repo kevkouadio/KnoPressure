@@ -33,7 +33,7 @@ function Landing() {
                         <br/>
                         <br/>
                         <ul>
-                        <li><strong>SignUp:</strong> <Link to="/login">SignUp</Link></li>
+                        <li><strong>SignUp:</strong> <Link to="/signup">SignUp</Link></li>
                         </ul>
                     </Col>
                 </Row>
