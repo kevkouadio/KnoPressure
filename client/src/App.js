@@ -1,6 +1,7 @@
 // App file renders the Container.js which is the bult of the application
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import Wrapper from "./components/Wrapper";
 import Landing from "./pages/Landing";
 import Login from "./pages/Login";
@@ -15,7 +16,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 function App() {  
   return (
     <AuthProvider>
-      <Router>
+      <Router basename="/KnoPressure-App">
       <div className="App">
         <Wrapper>  
         <Route exact path="/" component={Landing} />   
