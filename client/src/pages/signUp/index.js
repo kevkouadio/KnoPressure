@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, Redirect, useHistory } from "react-router-dom";
 import API from "../../utils/API";
 import { useAuth } from "../../utils/auth";
-import { Form, InputGroup } from "../../components/LoginForm";
+import { Form, InputGroup } from "../../components/Form";
 
 const signupStyles = {
   maxWidth: "20rem",

@@ -46,12 +46,7 @@ UserSchema.pre("save", async function () {
 
 UserSchema.methods.verifyPassword = async function (plainTextPassword) {
   return bcrypt.compare(plainTextPassword, this.password);
-  // bcrypt.compare(password, this.password, (err, isMatch) => {
-  //   if (err) {
-  //     return cb(err);
-  //   }
-  //   cb(null, isMatch);
-  // });
+
 };
 
 const User = mongoose.model("User", UserSchema);

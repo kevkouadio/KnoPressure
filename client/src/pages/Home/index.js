@@ -5,6 +5,7 @@ import BPImage from "../../components/BPImage";
 import Navbar from "../../components/Navbar";
 //import { useHistory } from "react-router-dom";
 import { useAuth } from "../../utils/auth";
+import SearchForm from "../../components/SearchForm";
 
 function Home(){
 
@@ -12,12 +13,14 @@ function Home(){
     // const history = useHistory();
 
     //const goToEditProfile = () => history.push("/profile");
+    console.log(user)
 
     return(
         <>  
         <Navbar/>     
         <Container>
-            <h2>Welcome {user.username}</h2>
+            <h2>Welcome {user.email}</h2>
+            <SearchForm />
             <BPImage />
             <Chart />
         </Container>

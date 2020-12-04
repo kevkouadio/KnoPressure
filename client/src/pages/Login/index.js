@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, Redirect, useHistory } from "react-router-dom";
 import { useAuth } from "../../utils/auth";
-import { Form, InputGroup } from "../../components/LoginForm";
+import { Form, InputGroup } from "../../components/Form";
 
 const loginStyle = {
   display: "flex",

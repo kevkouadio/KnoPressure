@@ -27,7 +27,7 @@ module.exports = {
 
     const ONE_DAY = 129600; // 129600 seconds per day
     const token = await signTokenAsync(
-      { id: user._id, email: user.email },
+      { id: user._id, email: user.email, username: user.username },
       process.env.SERVER_SECRET,
       { expiresIn: ONE_DAY }
     );
