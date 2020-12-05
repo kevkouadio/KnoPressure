@@ -3,6 +3,7 @@ import Chart from "../../components/Chart";
 import Container from "../../components/Container";
 import BPImage from "../../components/BPImage";
 import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 //import { useHistory } from "react-router-dom";
 import { useAuth } from "../../utils/auth";
 import SearchForm from "../../components/SearchForm";
@@ -24,6 +25,7 @@ function Home(){
             <BPImage />
             <Chart />
         </Container>
+        <Footer />
        </> 
     )
 };

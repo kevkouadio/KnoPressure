@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+  }
+  
+  html,
+  body {
+    height: 100%;
+  }
+  
+body {
+    
+    font-size: 15px;
+    color: black; 
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.padding {
+    padding: 20px;
+}
+
+/* Set the spacing between the links */
+.navbar ul {
+  padding-right: 15px;
+  margin-right: 15px;
+  font-size:  15px;
+} 
+
+.bg-light {
+  background-color: lavender !important;
+}
+
+/* Change the color of links on hover*/
+a:hover  { 
+  background:rgb(247, 164, 247);
+  color:black;
+  transition: .10s;
+} 

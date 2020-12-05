@@ -3,6 +3,7 @@ import Navbar from "../../components/Navbar";
 import Container from "../../components/Container";
 import Row from "../../components/Row";
 import Col from "../../components/Col";
+import Footer from "../../components/Footer";
 import "./aboutstyle.css";
 
 function About() {
@@ -59,7 +60,8 @@ function About() {
                         </div>                                           
                     </Row>
                 </Row>  
-            </Container>     
+            </Container>
+            <Footer />     
         </div>
      );
 }

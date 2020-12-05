@@ -35,7 +35,7 @@ body {
 
 /* Change the color of links on hover*/
 a:hover  { 
-  background:purple;
+  background:rgb(247, 164, 247);
   color:black;
   transition: .10s;
 } 

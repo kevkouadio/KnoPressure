@@ -1,7 +1,7 @@
 import React from "react";
 import Row from "../../components/Row";
 import Col from "../../components/Col";
-import SearchForm from "../../components/SearchForm";
+// import SearchForm from "../../components/SearchForm";
 import "./style.css";
 
 function BPImage () {

@@ -2,7 +2,7 @@ import React, { useState, useEffect }  from "react";
 import Col from "../../components/Col";
 import API from "../../utils/BP";
 import { Input, FormBtn } from "../../components/Form";
-import "./style.css";
+// import "./style.css";
 
 function SearchForm() {
   const [BP, setBP] = useState([])
