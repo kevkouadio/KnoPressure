@@ -4,7 +4,7 @@ import "./style.css";
 function Footer() {
   return (
     <footer className="footer">
-      <span>KnoPressure</span>
+      <span> &copy;  Our Team's Project 3 { new Date().getFullYear() }</span>
     </footer>
   );
 }

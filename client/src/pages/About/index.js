@@ -34,25 +34,25 @@ function About() {
                     </Col>
                      <Row>                                          
                         <div className="card images">
-                            <img src={"./assets/images/Kev K.jpeg"} className="card-img-top" alt="Kevin" />
+                            <img src={"./assets/images/KevK.jpeg"} className="card-img-top" alt="Kevin" />
                             <div className="card-body">
                                 <p className="card-text">Kouassi Kevin Kouadio </p>
                             </div>
                         </div>                       
                         <div className="card images">
-                            <img src={"./assets/images/Wendy_Image.jpg"} className="card-img-top" alt="Wendy" />
+                            <img src={"./assets/images/Wendy.jpg"} className="card-img-top" alt="Wendy" />
                                 <div className="card-body">
                                     <p className="card-text">Wendy Hintzen</p>
                                 </div>
                         </div>                       
                         <div className="card images">
-                            <img src={"./assets/images/tashena.jpeg"} className="card-img-top" alt="Tashena" />
+                            <img src={"./assets/images/Tashena.jpg"} className="card-img-top" alt="Tashena" />
                                 <div className="card-body">
                                     <p className="card-text">Tashena 'Sheena' Malloy </p>
                                 </div>                        
                         </div>                       
                         <div className="card images">
-                            <img src={"./assets/images/miguel.png"} className="card-img-top" alt="Miguel" />
+                            <img src={"./assets/images/Miguel.jpg"} className="card-img-top" alt="Miguel" />
                                 <div className="card-body">
                                     <p className="card-text">Miguel Lopez</p>
                                 </div>

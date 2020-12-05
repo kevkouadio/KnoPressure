@@ -1,4 +1,4 @@
-/* * {
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -9,11 +9,12 @@
   html,
   body {
     height: 100%;
-  } */
+  }
   
 body {
-    padding: 0;
-    margin: 0;
+    
+    font-size: 15px;
+    color: black; 
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -21,6 +22,24 @@ body {
     padding: 20px;
 }
 
+/* Set the spacing between the links */
+.navbar ul {
+  padding-right: 15px;
+  margin-right: 15px;
+  font-size:  15px;
+} 
+
+.bg-light {
+  background-color: lavender !important;
+}
+
+/* Change the color of links on hover*/
+a:hover  { 
+  background:purple;
+  color:black;
+  transition: .10s;
+} 
+  /* About Us header text */
 .display-5 {
     margin: 5px;
     padding-top: 5px;
@@ -38,6 +57,7 @@ hr {
     margin-bottom: 10px;
 }
 
+  /* Welcome Text  */
 .col-md-10 {
     padding-top: 10px;
     padding-bottom: 15px;
@@ -46,6 +66,7 @@ hr {
     background-color: rgb(190, 115, 219);
 }
 
+    /* Our Team text */
 .col-md-6 {
   position: relative;
     margin: auto;
@@ -75,7 +96,7 @@ hr {
   
 .card-img-top {
   max-width: 100%;
-  height: 220px;
+  height: 200px;
 }
 
 .card-body {

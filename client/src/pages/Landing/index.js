@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import Container from "../../components/Container";
 import Row from "../../components/Row";
 import Col from "../../components/Col";
-import "./style.css"
+import "./landingstyle.css"
 
 
 function Landing() {

@@ -25,6 +25,7 @@ function App() {
             <Route exact path="/signup" component={signUp} />
             <ProtectedRoute exact path="/home" component={Home} />
             <ProtectedRoute exact path="/about" component={About} />           
+            
         </Wrapper>
       </div>
       </Router>
