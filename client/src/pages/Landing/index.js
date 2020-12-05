@@ -19,10 +19,10 @@ function Landing() {
                                 className="img-fluid"/>                        
                     </Col>
                     <Col size="col-12">
-                        <p>
+                        <p><strong>
                                 Hypertension is more dangerous than ever before.  Did you know you can lower your risk...
                                 If your blood pressure is too high, it puts extra strain on your blood vessels, heart and other organs, such as the brain, kidneys and eyes. Persistent high blood pressure can increase your risk of a number of serious and potentially life-threatening health conditions, such as: 
-                            </p>
+                            </strong></p>
                             <p id="firsttext"> heart disease. heart attacks !!!!</p>
                             </Col>
                             </Row>
