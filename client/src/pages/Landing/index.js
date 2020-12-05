@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import Container from "../../components/Container";
 import Row from "../../components/Row";
 import Col from "../../components/Col";
+import Footer from "../../components/Footer";
 import "./landingstyle.css"
 
 
@@ -38,6 +39,7 @@ function Landing() {
                     </Col>
                 </Row>
             </Container>
+            <Footer />
         </div>
     );
 } 

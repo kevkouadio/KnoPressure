@@ -44,17 +44,15 @@ p {
   background-color: blueviolet;  
 }
 
+  /* KnoPressure Text */
 #display-5 {
  font-size: 30px;
  color: #ffffff;
  text-align: center; 
 }
-/* 
-.img-fluid {
-  justify-content: center;
-} */
 
 #heart {
+  margin-top: 20px;
  max-width: 100%; 
  height: 260px;
  justify-content: center;

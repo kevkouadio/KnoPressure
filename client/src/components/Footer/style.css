@@ -6,10 +6,11 @@
 .footer span {
   position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 3px;
-  margin-left: 12px;  
+  left: 10px;
+  right: -10px;
+  padding: 3px; 
+  /* margin-left: 12px;
+  margin-right: 0px;   */
   background-color:plum;
   text-align: center;
   font-size: 15px;
