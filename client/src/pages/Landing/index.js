@@ -26,14 +26,15 @@ function Landing() {
                             <p id="firsttext"> heart disease. heart attacks !!!!</p>
                             </Col>
                             </Row>
-                <Row>                    
+                <Row>       <img src="https://i.pinimg.com/originals/b3/70/5c/b3705cc2edf8f527789e6e2be29f6267.gif" width="200px" alt="heart rate"/>             
                     <Col size="lg-12" className="login">                                 
                         <p id="secondtext">Visit our Site and Track your Blood Pressure</p>
                         <p id="thirdtext"> Login if you are a member or Signup to become a member</p>
-                        <li><strong>Login:</strong> <Link to="/login">Login</Link></li>
+                        <Link to="/login" className={location.pathname === "/login"}><button type="login" className="btn btn-primary btn-md" id="login-btn">Login</button></Link>
+                        <br/>
                         <br/>
                         <ul>
-                        <li><strong>SignUp:</strong> <Link to="/signup">SignUp</Link></li>
+                        <Link to="/login" className={location.pathname === "/signup"}><button type="signup" className="btn btn-primary btn-md" id="login-btn">SignUp</button></Link>
                         </ul>
                     </Col>
                 </Row>
