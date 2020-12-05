@@ -30,8 +30,7 @@ function Landing() {
                     <Col size="lg-12" className="login">                                 
                         <p id="secondtext">Visit our Site and Track your Blood Pressure</p>
                         <p id="thirdtext"> Login if you are a member or Signup to become a member</p>
-                        <Link to="/login" className={location.pathname === "/login"}><button type="login" className="btn btn-primary btn-md" id="login-btn">Login</button></Link>
-                        <br/>
+                        <li><strong>Login:</strong> <Link to="/login">Login</Link></li>
                         <br/>
                         <ul>
                         <li><strong>SignUp:</strong> <Link to="/signup">SignUp</Link></li>
