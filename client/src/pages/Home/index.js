@@ -4,17 +4,13 @@ import Container from "../../components/Container";
 import BPImage from "../../components/BPImage";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-//import { useHistory } from "react-router-dom";
 import { useAuth } from "../../utils/auth";
 import SearchForm from "../../components/SearchForm";
 
 function Home(){
 
     const { user } = useAuth();
-    // const history = useHistory();
 
-    //const goToEditProfile = () => history.push("/profile");
-    console.log(user)
 
     return(
         <>  

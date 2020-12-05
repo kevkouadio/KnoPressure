@@ -34,7 +34,7 @@ function Landing() {
                         <br/>
                         <br/>
                         <ul>
-                        <Link to="/login" className={location.pathname === "/signup"}><button type="signup" className="btn btn-primary btn-md" id="login-btn">SignUp</button></Link>
+                        <Link to="/signup" className={location.pathname === "/signup"}><button type="signup" className="btn btn-primary btn-md" id="login-btn">SignUp</button></Link>
                         </ul>
                     </Col>
                 </Row>
