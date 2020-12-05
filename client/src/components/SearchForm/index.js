@@ -1,7 +1,6 @@
 import React, { useState, useEffect }  from "react";
 import Col from "../../components/Col";
 import API from "../../utils/BP";
-import Alert from "../../components/Alert";
 import { Input, FormBtn } from "../../components/Form";
 import "./style.css";
 

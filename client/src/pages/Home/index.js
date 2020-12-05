@@ -19,7 +19,7 @@ function Home(){
         <>  
         <Navbar/>     
         <Container>
-            <h2>Welcome {user.email}</h2>
+            <h2>Welcome {user.username}</h2>
             <SearchForm />
             <BPImage />
             <Chart />

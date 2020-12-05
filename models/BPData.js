@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 const bpSchema = new Schema({
     userID: { type: String, required: true },
-    Systolic: { type: String, required: true },
-    Diastolic: { type: String, required: true },
+    Systolic: { type: Number, required: true },
+    Diastolic: { type: Number, required: true },
     date: { type: Date, default: Date.now },
 });
 
