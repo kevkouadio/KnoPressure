@@ -29,7 +29,7 @@ function Chart() {
   });
   
   const myData = {
-    type: 'line',
+    type: 'bar',
     series: [
       { values: diastolicData, lineColor: 'red'},
       { values: systolicData, lineColor: 'blue'}
