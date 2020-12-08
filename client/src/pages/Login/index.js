@@ -2,14 +2,8 @@ import React, { useState } from "react";
 import { Link, Redirect, useHistory } from "react-router-dom";
 import { useAuth } from "../../utils/auth";
 import { Form, InputGroup } from "../../components/Form";
+import "./style.css"
 
-const loginStyle = {
-  display: "flex",
-  justifyContent: "center",
-  flexDirection: "column",
-  maxWidth: "20rem",
-  margin: "0 auto",
-};
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -25,7 +19,7 @@ function Login() {
     event.preventDefault();
 
     login(email, password)
-      // navigate to the profile page
+      // navigate to the home page
       .then(() => history.push("/home"))
       .catch((err) => {
         alert(err.response.data.message);
@@ -33,32 +27,35 @@ function Login() {
   };
 
   return (
-    <div style={loginStyle}>
+    <div >
       <h1>Login</h1>
       <Form onSubmit={handleFormSubmit}>
+        <div>
         <InputGroup
           id="email"
           labelText="Email"
+          placeholder="bobsha@email.com"
           name="email"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
+        </div>
+        <div>
         <InputGroup
           id="password"
           labelText="Password"
+          placeholder="yourPassword"
           name="password"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Submit</button>
+        </div>
+        <button className="btn btn-primary" type="submit">Submit</button>
       </Form>
+      <br/>
       <Link
-        style={{
-          marginTop: "1.5rem",
-          textAlign: "center",
-        }}
         to="/signup"
       >
         Go to Signup

@@ -22,10 +22,11 @@ export function Form(props) {
 
 export function InputGroup({ id, labelText, ...inputProps }) {
   return (
-    <>
+    <div className="form-group">
       <label htmlFor={id}>{labelText}</label>
+      <br/>
       <input id={id} {...inputProps} />
-    </>
+    </div>
   );
 }
 

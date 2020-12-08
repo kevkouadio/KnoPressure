@@ -1,22 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
-//import { NavLink } from "react-router-dom";
 import { useAuth } from "../../utils/auth";
 import "./navstyle.css";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function Navbar() {
   const { isLoggedIn, logout } = useAuth();
-  //const links = [<BrandLink key="/" to="/" />];
+  
 
   if (isLoggedIn) {
     return (
-    <nav className="navbar navbar-expand-md navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
-      <span className="navbar-brand mb-1 h1">KnoPressure</span>
-      {/* <Link className="navbar-brand" to="/home">
+      <Link className="navbar-brand" to="/home">
         KnoPressure
-      </Link> */}
+      </Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
       </button>

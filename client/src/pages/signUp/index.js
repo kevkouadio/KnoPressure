@@ -4,14 +4,6 @@ import API from "../../utils/API";
 import { useAuth } from "../../utils/auth";
 import { Form, InputGroup } from "../../components/Form";
 
-const signupStyles = {
-  maxWidth: "20rem",
-  margin: "0 auto",
-  display: "flex",
-  justifyContent: "center",
-  flexDirection: "column",
-};
-
 function Signup() {
   const [formState, setFormState] = useState({
     username: "",
@@ -47,13 +39,14 @@ function Signup() {
   };
 
   return (
-    <div style={signupStyles} className="Signup">
+    <div className="Signup">
       <h1>Signup</h1>
+      <br/>
       <Form onSubmit={handleFormSubmit}>
         <InputGroup
           id="username"
           labelText="Username"
-          placeholder="WinterIsComing"
+          placeholder="yourUsername"
           name="username"
           type="text"
           onChange={handleChange}
@@ -61,7 +54,7 @@ function Signup() {
         <InputGroup
           id="email"
           labelText="Email"
-          placeholder="jon.snow@email.com"
+          placeholder="bobsha@email.com"
           name="email"
           type="email"
           onChange={handleChange}
@@ -69,18 +62,15 @@ function Signup() {
         <InputGroup
           id="pwd"
           labelText="Password"
-          placeholder="p@ssw0Rd!"
+          placeholder="yourPassword"
           name="password"
           type="password"
           onChange={handleChange}
         />
-        <button type="submit">Submit</button>
+        <button className="btn-primary" type="submit">Submit</button>
       </Form>
+      <br/>
       <Link
-        style={{
-          marginTop: "1.5rem",
-          textAlign: "center",
-        }}
         to="/login"
       >
         Go to Login
