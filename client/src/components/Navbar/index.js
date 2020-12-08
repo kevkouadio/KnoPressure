@@ -24,7 +24,7 @@ function Navbar() {
             <Link
               to="/"
               className={
-                window.location.pathname === "/" ? "nav-link active": "nav-link"} onClick={logout}
+                window.location.pathname === "/KnoPressure-App" ? "nav-link active": "nav-link"} onClick={logout}
             >
               Logout
             </Link>

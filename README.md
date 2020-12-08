@@ -3,7 +3,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/kevkouadio/KnoPressure-App)
 ![GitHub contributors](https://img.shields.io/github/contributors/kevkouadio/KnoPressure-App?style=plastic)
 
-Project name is a `<utility/tool/feature>` that allows `<insert_target_audience>` to do `<action/task_it_does>`.
+ KnoPressure is a blood pressure app built using React.js.  This App will allow you to enter your daily blood pressure information and it tracks the results in chart that will display how your blood pressure is trending.  With this physical view you can see when your blood pressure is Normal, High or Low and can take corresponding action. 
 
 <!-- <!-- Additional line of information text about what the project does. -->
 
