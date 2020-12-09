@@ -1,19 +1,17 @@
-.card {
-  background-size: cover;
-  background-position: center;
-  background-clip: content-box;
-  border: 6px solid white;
-  height: 400px;
-  width: 400px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  position: relative;
-  margin: 0 auto;
-  margin-top: 30px;
+#pCard {
+    color: black;
+    float: left;
+    margin: 30px;
+    display: block;
 }
 
-.card .fa-spinner {
-  font-size: 180px;
-  position: absolute;
-  left: 25%;
-  top: 25%;
+h5 {
+    text-align: center;
+    background-color: blue;
+    color: white;
 }
+
+#pCard:hover {
+    transform: scale(1.2);
+    
+  }

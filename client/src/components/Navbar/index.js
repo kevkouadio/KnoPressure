@@ -22,15 +22,6 @@ function Navbar() {
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
             <Link
-              to="/"
-              className={
-                window.location.pathname === "/KnoPressure-App" ? "nav-link active": "nav-link"} onClick={logout}
-            >
-              Logout
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
               to="/home"
               className={window.location.pathname === "/home" ? "nav-link active" : "nav-link"}
             >
@@ -39,10 +30,27 @@ function Navbar() {
           </li>
           <li className="nav-item">
             <Link
+              to="/tips"
+              className={window.location.pathname === "/tips" ? "nav-link active" : "nav-link"}
+            >
+              Tips
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
               to="/about"
               className={window.location.pathname === "/about" ? "nav-link active" : "nav-link"}
             >
               About
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/"
+              className={
+                window.location.pathname === "/KnoPressure-App" ? "nav-link active": "nav-link"} onClick={logout}
+            >
+              Logout
             </Link>
           </li>
         </ul>

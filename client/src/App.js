@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import Chart from "./components/Chart";
 import { AuthProvider } from "./utils/auth";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Tips from "./pages/Tips";
 
 
 function App() {  
@@ -24,8 +25,8 @@ function App() {
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={signUp} />
             <ProtectedRoute exact path="/home" component={Home} />
-            <ProtectedRoute exact path="/about" component={About} />           
-            
+            <ProtectedRoute exact path="/about" component={About} />   
+            <ProtectedRoute exact path="/tips" component={Tips} />     
         </Wrapper>
       </div>
       </Router>
