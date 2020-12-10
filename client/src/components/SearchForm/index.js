@@ -2,12 +2,33 @@ import React, { useState, useEffect }  from "react";
 import Col from "../../components/Col";
 import API from "../../utils/BP";
 import { Input, FormBtn } from "../../components/Form";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 // import "./style.css";
 
 function SearchForm() {
   const [BP, setBP] = useState([])
   const [formObject, setFormObject] = useState({})
 
+  const notify = () => toast.success("Systolic and Diastolic values saved!", {
+    position: "top-center",
+    autoClose: 4000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    });
+
+  const notifyE = () => toast.error("Incorrect Systolic and/or Diastolic values!", {
+    position: "top-center",
+    autoClose: 4000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    });
 
   useEffect(() => {
     loadBP()
@@ -29,10 +50,12 @@ function SearchForm() {
         Diastolic: formObject.diastolic,
       })
         .then(res => loadBP())
-        .catch(err => alert(err));
-        alert("Systolic & Diastolic Saved!")
+        .then(notify)
+        .catch(err => notifyE(err))
     }
-    window.location.reload();
+    setTimeout(function() {
+      window.location.reload();
+    }, 5000);
   };
 
   function handleInputChange(event) {
@@ -64,6 +87,7 @@ function SearchForm() {
               >
                 Submit 
               </FormBtn>
+              <ToastContainer />
       </form>
     </Col>
   );

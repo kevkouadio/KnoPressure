@@ -37,14 +37,15 @@ function Chart() {
       backgroundColor: '#4caf50' 
     }, 
     { 
-      text: 'Systolic/High BP',
-      hook: 'scale:name=scale-y,index=10',
-      backgroundColor: 'darkred'
+      text: 'Systolic/elevated',
+      hook: 'scale:name=scale-y,index=7',
+      backgroundColor: 'yellow'
     }, 
     { 
       text: 'Diastolic/High BP',
-      hook: 'scale:name=scale-y,index=7',
-      backgroundColor: 'darkred'
+      hook: 'scale:name=scale-y,index=10',
+      backgroundColor: 'darkred',
+      color: 'white'
     },
     {
       text: 'Diastolic/Normal',
@@ -54,11 +55,6 @@ function Chart() {
     {
     text: 'Diastolic/elevated',
       hook: 'scale:name=scale-y,index=4',
-      backgroundColor: 'yellow'
-    },
-    { 
-      text: 'Systolic/elevated',
-      hook: 'scale:name=scale-y,index=9',
       backgroundColor: 'yellow'
     }, 
   ],

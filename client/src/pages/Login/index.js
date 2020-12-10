@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link, Redirect, useHistory } from "react-router-dom";
 import { useAuth } from "../../utils/auth";
 import { Form, InputGroup } from "../../components/Form";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./style.css"
 
 
@@ -10,6 +12,16 @@ function Login() {
   const [password, setPassword] = useState("");
   const { isLoggedIn, login } = useAuth();
   const history = useHistory();
+
+  const notify = () => toast.error("Incorrect email and/or password !", {
+    position: "top-center",
+    autoClose: 6000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    });
 
   if (isLoggedIn) {
     return <Redirect to="/home" />;
@@ -21,9 +33,9 @@ function Login() {
     login(email, password)
       // navigate to the home page
       .then(() => history.push("/home"))
-      .catch((err) => {
-        alert(err.response.data.message);
-      });
+      // .catch((err) => {
+      //   alert(err.response.data.message);
+      // });
   };
 
   return (
@@ -52,7 +64,8 @@ function Login() {
           onChange={(e) => setPassword(e.target.value)}
         />
         </div>
-        <button className="btn btn-primary" type="submit">Submit</button>
+        <button className="btn btn-primary" type="submit" onClick={isLoggedIn ? <Redirect to="/login" /> : notify}>Submit</button>
+        <ToastContainer />
       </Form>
       <br/>
       <Link
