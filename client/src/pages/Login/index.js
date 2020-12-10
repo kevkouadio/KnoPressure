@@ -33,9 +33,7 @@ function Login() {
     login(email, password)
       // navigate to the home page
       .then(() => history.push("/home"))
-      // .catch((err) => {
-      //   alert(err.response.data.message);
-      // });
+      .catch(err => notify(err))
   };
 
   return (
@@ -64,7 +62,7 @@ function Login() {
           onChange={(e) => setPassword(e.target.value)}
         />
         </div>
-        <button className="btn btn-primary" type="submit" onClick={isLoggedIn ? <Redirect to="/login" /> : notify}>Submit</button>
+        <button className="btn btn-primary" type="submit">Submit</button>
         <ToastContainer />
       </Form>
       <br/>
