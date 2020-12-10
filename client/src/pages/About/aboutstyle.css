@@ -87,10 +87,11 @@ hr {
 }
 
 .images {
-  width: 14rem;  
+  width: 15rem; 
+  height: auto;
   border: 2px solid black;
   border-radius: solid 4px;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
   margin-top: 15px;
 }
   
