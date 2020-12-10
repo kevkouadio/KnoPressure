@@ -24,6 +24,9 @@ function About() {
                                 High blood pressure, also called hypertension, is when the pressure in your blood vessels is unusually high. It can be serious if not treated.
                                 Lifestyle changes like eating a healthy diet and exercising regularly can help lower high blood pressure. Some people also need to take medicines.
                                 Things that increase your chances of high blood pressure include being overweight, having an unhealthy diet, smoking and not exercising enough.
+                                <br></br>
+                                We created this app in light of the current pandemic. Many people are under huge amount of stress in everyday life and if your blood pressure is untracked and unchecked 
+                                you can literally end up in the hospital or worse in the blink of an eye. So please try and stay healthy, find ways to destress, take care of yourselves. 
                                 </p>
                             </div>
                         </div>
