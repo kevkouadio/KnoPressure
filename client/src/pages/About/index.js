@@ -53,7 +53,7 @@ function About() {
                                 </div>                        
                         </div>                       
                         <div className="card images">
-                            <img src={"./assets/images/Miguel.jpg"} className="card-img-top" alt="Miguel" />
+                            <img src={"./assets/images/Miguel1.png"} className="card-img-top" alt="Miguel" />
                                 <div className="card-body">
                                     <p className="card-text">Miguel Lopez</p>
                                 </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import CardList from "../../components/CardList";
 import Navbar from "../../components/Navbar";
+import Container from "../../components/Container";
 import Footer from "../../components/Footer";
 
 function Tips() {
@@ -8,10 +9,12 @@ function Tips() {
   return (
     <>
      <Navbar/>
-    <div className="row">
+     <Container>
+        <div className="row">
       <CardList />
     </div>
-    <Footer/>
+      </Container>
+      <Footer/>
     </>
   )
 };

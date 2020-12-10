@@ -46,9 +46,9 @@ function Navbar() {
           </li>
           <li className="nav-item">
             <Link
-              to="/"
+              to="/logout"
               className={
-                window.location.pathname === "/KnoPressure-App" ? "nav-link active": "nav-link"} onClick={logout}
+                window.location.pathname === "/logout" ? "nav-link active": "nav-link"} onClick={logout}
             >
               Logout
             </Link>
