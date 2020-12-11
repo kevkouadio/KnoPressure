@@ -74,14 +74,14 @@ Users can use the repo, but please do not delete any code.
 
 If you have any questions about the repo, open an issue or contact us directly at:
 Team:
-Miguel: you can reach me at <chino6989@gmail.com>.
-Wendy: you can reach me at <hintzenw@gmail.com>.
-Sheena: you can reach me at <sheena15m@yahoo.com>.
-Kevin: you can reach me at <kevkouadio@gmail.com>. 
+* Miguel: you can reach me at <chino6989@gmail.com>.
+* Wendy: you can reach me at <hintzenw@gmail.com>.
+* Sheena: you can reach me at <sheena15m@yahoo.com>.
+* Kevin: you can reach me at <kevkouadio@gmail.com>. 
 
 You can find more of our work at
-[kevKouadio](https://github.com/kevkouadio)
-[whintzen](https://github.com/whintzen/)
-[Sheena](https://github.com/Sheena15M)
-[Miguel](https://github.com/chino6989).
+- [kevKouadio](https://github.com/kevkouadio)
+- [whintzen](https://github.com/whintzen/)
+- [Sheena](https://github.com/Sheena15M)
+- [Miguel](https://github.com/chino6989).
 
