@@ -3,6 +3,8 @@ import { Link, Redirect, useHistory } from "react-router-dom";
 import API from "../../utils/API";
 import { useAuth } from "../../utils/auth";
 import { Form, InputGroup } from "../../components/Form";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Signup() {
   const [formState, setFormState] = useState({
@@ -14,6 +16,16 @@ function Signup() {
   const { isLoggedIn } = useAuth();
 
   const history = useHistory();
+
+  const notify = () => toast.error("ERROR!!! invalid input field or account already exist!", {
+    position: "top-center",
+    autoClose: 6000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    });
 
   if (isLoggedIn) {
     return <Redirect to="/home" />;
@@ -27,7 +39,7 @@ function Signup() {
         // send them to the login page
         history.replace("/login");
       })
-      .catch((err) => alert(err));
+      //.catch((err) => alert(err));
   };
 
   const handleChange = (event) => {
@@ -67,7 +79,8 @@ function Signup() {
           type="password"
           onChange={handleChange}
         />
-        <button className="btn-primary" type="submit">Submit</button>
+        <button className="btn-primary" type="submit" onClick={isLoggedIn ? <Redirect to="/signup" /> : notify}>Submit</button>
+        <ToastContainer />
       </Form>
       <br/>
       <Link

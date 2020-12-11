@@ -34,23 +34,35 @@ function Chart() {
     { //Scale to indicate value of normal bp rate 
       text: 'Systolic/Normal',
       hook: 'scale:name=scale-y,index=6',
-      backgroundColor: '#4caf50'
+      backgroundColor: '#4caf50' 
+    }, 
+    { 
+      text: 'Systolic/elevated',
+      hook: 'scale:name=scale-y,index=7',
+      backgroundColor: 'yellow'
     }, 
     { 
       text: 'Systolic/High BP',
-      hook: 'scale:name=scale-y,index=7',
-      backgroundColor: 'red'
-    }, 
+      hook: 'scale:name=scale-y,index=8',
+      backgroundColor: 'darkred',
+      color: 'white'
+    },
     { 
       text: 'Diastolic/High BP',
       hook: 'scale:name=scale-y,index=5',
-      backgroundColor: 'red'
+      backgroundColor: 'darkred',
+      color: 'white'
     },
     {
       text: 'Diastolic/Normal',
-      hook: 'scale:name=scale-y,index=4',
+      hook: 'scale:name=scale-y,index=3',
       backgroundColor: '#4caf50'
-    }
+    },
+    {
+    text: 'Diastolic/elevated',
+      hook: 'scale:name=scale-y,index=4',
+      backgroundColor: 'yellow'
+    }, 
   ],
   scaleY: {
     label: {

@@ -10,6 +10,7 @@ function Tips() {
     <>
      <Navbar/>
      <Container>
+       <h2>If your blood pressure reading is 180/120 or greater and/or you are having symptoms such as chest pain, shortness of breath,etc. Please call 911 IMMEDIATELY!!</h2>
         <div className="row">
       <CardList />
     </div>

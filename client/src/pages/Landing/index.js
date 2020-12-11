@@ -20,10 +20,10 @@ function Landing() {
                     </Col>
                     <Col size="col-12">
                         <p><strong>
-                                Hypertension is more dangerous than ever before.  Did you know you can lower your risk...
+                                Hypertension is as dangerous than ever! Known as the "silent killer", you can be considered overall healthy and then have a massive heart attack or stroke in the blink of an eye without any warning.  However, there are ways to lower your risk and avoid this!
                                 If your blood pressure is too high, it puts extra strain on your blood vessels, heart and other organs, such as the brain, kidneys and eyes. Persistent high blood pressure can increase your risk of a number of serious and potentially life-threatening health conditions, such as: 
                             </strong></p>
-                            <p id="firsttext"> heart disease. heart attacks !!!!</p>
+                            <p id="firsttext"> heart disease. heart attacks !!!! Let's get heart healthy!</p>
                             </Col>
                             </Row>
                 <Row>       <img src="https://i.pinimg.com/originals/b3/70/5c/b3705cc2edf8f527789e6e2be29f6267.gif" width="200px" alt="heart rate"/>             
