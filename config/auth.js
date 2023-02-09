@@ -1,14 +1,10 @@
 const db = require("../models");
-const exjwt = require("express-jwt");
 const jwt = require("jsonwebtoken");
 const util = require("util");
 
 const signTokenAsync = util.promisify(jwt.sign);
 
 module.exports = {
-  // express middleware function
-  isAuthenticated: exjwt({ secret: process.env.SERVER_SECRET }),
-
   // Resolves to an object with failure message or
   // token and user if login is successful.
   logUserIn: async (email, password) => {
@@ -37,5 +33,21 @@ module.exports = {
       token,
       user,
     };
+  },
+
+  // Express middleware function
+  isAuthenticated: (req, res, next) => {
+    const token = req.headers["authorization"];
+    if (!token) {
+      return res.status(401).json({ message: "No token provided" });
+    }
+
+    try {
+      const decoded = jwt.verify(token, process.env.SERVER_SECRET);
+      req.user = decoded;
+      next();
+    } catch (err) {
+      return res.status(401).json({ message: "Token is not valid" });
+    }
   },
 };

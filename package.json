@@ -33,9 +33,9 @@
     "bcrypt": "^5.0.0",
     "dotenv": "^8.2.0",
     "express": "^4.16.4",
-    "express-jwt": "^5.3.3",
+    "express-jwt": "^8.4.1",
     "if-env": "^1.0.4",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^5.9.13",
     "morgan": "^1.10.0",
     "react-toastify": "^6.2.0"

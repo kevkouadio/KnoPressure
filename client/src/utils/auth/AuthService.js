@@ -2,15 +2,12 @@ import decode from "jwt-decode";
 import axios from "axios";
 export default class AuthService {
 
-    login = (email, password, username) => {
+    login = async (email, password, username) => {
       // Get a token
-      return axios.post("api/login", {email: email, password: password, username: username})
-        .then(res => {
-          // set the token once the user logs in
-          this.setToken(res.data.token);
-          // return the rest of the response
-          return res;
-        });
+      const res = await axios.post("api/login", { email: email, password: password, username: username });
+      // set the token once the user logs in
+      this.setToken(res.data.token);
+      return res;
     };
 
     getProfile = () => {
