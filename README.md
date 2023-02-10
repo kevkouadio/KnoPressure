@@ -55,7 +55,7 @@ Thanks to the following people who have contributed to this project:
 - [@Sheena15M](https://github.com/Sheena15M) 🐛
 - [@whintzen](https://github.com/whintzen) 🐛
 - [@kevkouadio](https://github.com/kevkouadio) 🐛
-- [@chino6989](https://github.com/chino6989)🐛
+- [@MigzProgramador](https://github.com/MigzProgramador)🐛
 
 ## Usage
 
@@ -83,5 +83,5 @@ You can find more of our work at
 - [kevKouadio](https://github.com/kevkouadio)
 - [whintzen](https://github.com/whintzen/)
 - [Sheena](https://github.com/Sheena15M)
-- [Miguel](https://github.com/chino6989).
+- [Miguel](https://github.com/MigzProgramador).
 
