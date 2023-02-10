@@ -4,7 +4,8 @@
   "description": "Mern Demo",
   "main": "server.js",
   "engine": {
-    "node": "12.x"
+    "node": "16.18.0",
+    "npm": "8.19.2"
   },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -18,7 +19,7 @@
     "lint:fix": "eslint --fix . && cd client && npm run lint:fix",
     "test": "cd client && npm run test"
   },
-  "author": "Wendy",
+  "author": "kevkouadio",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.3.0",
