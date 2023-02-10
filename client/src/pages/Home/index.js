@@ -11,7 +11,6 @@ function Home(){
 
     const { user } = useAuth();
 
-
     return(
         <>  
         <Navbar/>     

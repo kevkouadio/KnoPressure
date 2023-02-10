@@ -10,6 +10,7 @@ router.get("/api/user/:id", isAuthenticated, (req, res) => {
     .then((data) => {
       if (data) {
         res.json(data);
+        console.log(data)
       } else {
         res.status(404).send({ success: false, message: "No user found" });
       }

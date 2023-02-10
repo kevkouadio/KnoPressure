@@ -12,10 +12,10 @@ export const AuthProvider = ({ value, ...rest }) => {
     isLoggedIn ? authService.getProfile() : null
   );
 
-  const login = (email, password, username) => {
-    return authService
-      .login(email, password, username)
-      .then(() => setUser(authService.getProfile()));
+  const login = async (email, password, username) => {
+    await authService
+      .login(email, password, username);
+    return setUser(authService.getProfile());
   };
 
   const logout = () => authService.logout();

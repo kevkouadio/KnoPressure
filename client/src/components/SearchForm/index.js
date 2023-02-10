@@ -37,7 +37,7 @@ function SearchForm() {
   function loadBP() {
     API.getBPData()
       .then(res => 
-        setBP(res.data)
+        setBP(res.data),
       )
       .catch(err => console.log(err));
   };

@@ -37,17 +37,17 @@ module.exports = {
 
   // Express middleware function
   isAuthenticated: (req, res, next) => {
-    const token = req.headers["authorization"];
+    const token = req.header("Authorization");
     if (!token) {
-      return res.status(401).json({ message: "No token provided" });
+      return res.status(401).json({ message: "Access Denied" });
     }
-
+  
     try {
-      const decoded = jwt.verify(token, process.env.SERVER_SECRET);
+      const decoded = jwt.verify(token.split(" ")[1], process.env.SERVER_SECRET);
       req.user = decoded;
       next();
     } catch (err) {
       return res.status(401).json({ message: "Token is not valid" });
     }
-  },
+  },  
 };
