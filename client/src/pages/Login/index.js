@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Link, Redirect, useHistory } from "react-router-dom";
 import { useAuth } from "../../utils/auth";
-import { Form, InputGroup } from "../../components/Form";
+import { Form, Input } from "../../components/Form";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "./style.css"
+import "./style.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 
 function Login() {
@@ -12,6 +14,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const { isLoggedIn, login } = useAuth();
   const history = useHistory();
+  const [showPassword, setShowPassword] = useState(false);
 
   const notify = () => toast.error("Incorrect email and/or password !", {
     position: "top-center",
@@ -21,7 +24,7 @@ function Login() {
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
-    });
+  });
 
   if (isLoggedIn) {
     return <Redirect to="/home" />;
@@ -37,40 +40,43 @@ function Login() {
   };
 
   return (
-    <div >
+    <div className="card login-sign-Card">
       <h1>Login</h1>
+      <br />
       <Form onSubmit={handleFormSubmit}>
         <div>
-        <InputGroup
-          id="email"
-          labelText="Email"
-          placeholder="bobsha@email.com"
-          name="email"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+          <label>Email:</label>
+          <Input
+            id="email"
+            labelText="Email"
+            placeholder="name@email.com"
+            name="email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
         <div>
-        <InputGroup
-          id="password"
-          labelText="Password"
-          placeholder="yourPassword"
-          name="password"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+          <label>Password:</label>
+          <Input
+            id="password"
+            labelText="Password"
+            placeholder="password"
+            name="password"
+            type={showPassword ? "text" : "password"}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <FontAwesomeIcon
+            icon={showPassword ? faEye : faEyeSlash}
+            onClick={() => setShowPassword(!showPassword)}
+          />
         </div>
         <button className="btn btn-primary" type="submit">Submit</button>
         <ToastContainer />
       </Form>
-      <br/>
-      <Link
-        to="/signup"
-      >
-        Go to Signup
-      </Link>
+      <br />
+      Don't have an account?<Link className="login-sign-link" to="/signup"> Signup</Link>
     </div>
   );
 }

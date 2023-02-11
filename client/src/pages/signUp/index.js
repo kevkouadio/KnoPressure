@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { Link, Redirect, useHistory } from "react-router-dom";
 import API from "../../utils/API";
 import { useAuth } from "../../utils/auth";
-import { Form, InputGroup } from "../../components/Form";
+import { Form, Input, InputGroup } from "../../components/Form";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import "./style.css";
 
 function Signup() {
   const [formState, setFormState] = useState({
@@ -12,6 +15,8 @@ function Signup() {
     email: "",
     password: "",
   });
+
+  const [showPassword, setShowPassword] = useState(false);
 
   const { isLoggedIn } = useAuth();
 
@@ -51,43 +56,52 @@ function Signup() {
   };
 
   return (
-    <div className="Signup">
+    <div className="card login-sign-Card">
       <h1>Signup</h1>
       <br/>
       <Form onSubmit={handleFormSubmit}>
-        <InputGroup
+        <div>
+        <label>Name:</label>
+        <Input
           id="username"
           labelText="Username"
-          placeholder="yourUsername"
+          placeholder="your name"
           name="username"
           type="text"
           onChange={handleChange}
         />
-        <InputGroup
+        </div>
+        <div>
+        <label>Email:</label>
+        <Input
           id="email"
           labelText="Email"
-          placeholder="bobsha@email.com"
+          placeholder="name@email.com"
           name="email"
           type="email"
           onChange={handleChange}
         />
-        <InputGroup
+        </div>
+        <div>
+        <label>Password:</label>
+        <Input
           id="pwd"
           labelText="Password"
-          placeholder="yourPassword"
+          placeholder="password"
           name="password"
-          type="password"
+          type={showPassword ? "text" : "password"}
           onChange={handleChange}
         />
-        <button className="btn-primary" type="submit" onClick={isLoggedIn ? <Redirect to="/signup" /> : notify}>Submit</button>
+         <FontAwesomeIcon id="signUp-icon"
+            icon={showPassword ? faEye : faEyeSlash}
+            onClick={() => setShowPassword(!showPassword)}
+          />
+        </div>
+        <button className="btn btn-primary" type="submit" onClick={isLoggedIn ? <Redirect to="/signup" /> : notify}>Submit</button>
         <ToastContainer />
       </Form>
       <br/>
-      <Link
-        to="/login"
-      >
-        Go to Login
-      </Link>
+      Already have an account?<Link className="login-sign-link" to="/login"> Login</Link>
     </div>
   );
 }

@@ -2,6 +2,31 @@ body {
     background-color: plum;
 }
 
+.login-sign-Card {
+    background-color: plum;
+    width: 18rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    border: none;
+}
+
+.svg-inline--fa {
+    position: absolute;
+    right: 10px;
+    top: 60%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: blue;
+  }
+ 
+.login-sign-link {
+    width: 25%; 
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: underline;
+}
+
 a {
     color: rgb(70, 70, 216);
 }
