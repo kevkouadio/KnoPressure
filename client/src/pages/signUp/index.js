@@ -22,7 +22,7 @@ function Signup() {
 
   const history = useHistory();
 
-  const notify = () => toast.error("ERROR!!! invalid input field or account already exist!", {
+  const notifyError = () => toast.error("ERROR!!! invalid input field or account already exist!", {
     position: "top-center",
     autoClose: 6000,
     hideProgressBar: false,
@@ -30,7 +30,17 @@ function Signup() {
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
-    });
+  });
+
+  const notifySuccess = () => toast.success("Congratulations! Your account has been created. Please log in and start using our service.Thank you for choosing our platform. 😊", {
+    position: "top-center",
+    autoClose: 7000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
 
   if (isLoggedIn) {
     return <Redirect to="/home" />;
@@ -42,9 +52,12 @@ function Signup() {
       .then((res) => {
         // once the user has signed up
         // send them to the login page
-        history.replace("/login");
+        notifySuccess()
+        setTimeout(function() {
+          history.replace("/login");
+        }, 7500);
       })
-      //.catch((err) => alert(err));
+    .catch((err) => notifyError(err));
   };
 
   const handleChange = (event) => {
@@ -58,49 +71,49 @@ function Signup() {
   return (
     <div className="card login-sign-Card">
       <h1>Signup</h1>
-      <br/>
+      <br />
       <Form onSubmit={handleFormSubmit}>
         <div>
-        <label>Name:</label>
-        <Input
-          id="username"
-          labelText="Username"
-          placeholder="your name"
-          name="username"
-          type="text"
-          onChange={handleChange}
-        />
+          <label>Name:</label>
+          <Input
+            id="username"
+            labelText="Username"
+            placeholder="your name"
+            name="username"
+            type="text"
+            onChange={handleChange}
+          />
         </div>
         <div>
-        <label>Email:</label>
-        <Input
-          id="email"
-          labelText="Email"
-          placeholder="name@email.com"
-          name="email"
-          type="email"
-          onChange={handleChange}
-        />
+          <label>Email:</label>
+          <Input
+            id="email"
+            labelText="Email"
+            placeholder="name@email.com"
+            name="email"
+            type="email"
+            onChange={handleChange}
+          />
         </div>
         <div>
-        <label>Password:</label>
-        <Input
-          id="pwd"
-          labelText="Password"
-          placeholder="password"
-          name="password"
-          type={showPassword ? "text" : "password"}
-          onChange={handleChange}
-        />
-         <FontAwesomeIcon id="signUp-icon"
+          <label>Password:</label>
+          <Input
+            id="pwd"
+            labelText="Password"
+            placeholder="password"
+            name="password"
+            type={showPassword ? "text" : "password"}
+            onChange={handleChange}
+          />
+          <FontAwesomeIcon id="signUp-icon"
             icon={showPassword ? faEye : faEyeSlash}
             onClick={() => setShowPassword(!showPassword)}
           />
         </div>
-        <button className="btn btn-primary" type="submit" onClick={isLoggedIn ? <Redirect to="/signup" /> : notify}>Submit</button>
+        <button className="btn btn-primary" type="submit" onClick={handleFormSubmit}>Submit</button>
         <ToastContainer />
       </Form>
-      <br/>
+      <br />
       Already have an account?<Link className="login-sign-link" to="/login"> Login</Link>
     </div>
   );
