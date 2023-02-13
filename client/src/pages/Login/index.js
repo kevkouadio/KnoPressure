@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import Spinner from "../../components/Sipnner";
 
 
 function Login() {
@@ -15,6 +16,7 @@ function Login() {
   const { isLoggedIn, login } = useAuth();
   const history = useHistory();
   const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setLoading] = useState(false);
 
   const notify = () => toast.error("Incorrect email and/or password !", {
     position: "top-center",
@@ -26,23 +28,31 @@ function Login() {
     progress: undefined,
   });
 
-  if (isLoggedIn) {
-    return <Redirect to="/home" />;
-  }
-
   const handleFormSubmit = (event) => {
     event.preventDefault();
-
     login(email, password)
       // navigate to the home page
-      .then(() => history.push("/home"))
-      .catch(err => notify(err))
+      .then(() => {
+        setLoading(true);//to dispaly the loading spinner 
+        setTimeout(() => {
+          history.push("/home");
+        }, 2000);
+      })
+      .catch(err => notify(err));
   };
+
+  
+  if (isLoggedIn) {
+    setInterval(() => {
+      return <Redirect to="/home" />;
+    }, 2000);// This will redirect to "/home" after 2000 milliseconds (2 seconds)
+  }
 
   return (
     <div className="card login-sign-Card">
       <h1>Login</h1>
       <br />
+      {isLoading ? <Spinner />: null}
       <Form onSubmit={handleFormSubmit}>
         <div>
           <label>Email:</label>

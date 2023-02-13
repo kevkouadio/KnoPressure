@@ -7,6 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import Spinner from "../../components/Sipnner";
 import "./style.css";
 
 function Signup() {
@@ -17,10 +18,9 @@ function Signup() {
   });
 
   const [showPassword, setShowPassword] = useState(false);
-
   const { isLoggedIn } = useAuth();
-
   const history = useHistory();
+  const [isLoading, setLoading] = useState(false);
 
   const notifyError = () => toast.error("ERROR!!! invalid input field or account already exist!", {
     position: "top-center",
@@ -52,7 +52,11 @@ function Signup() {
       .then((res) => {
         // once the user has signed up
         // send them to the login page
-        notifySuccess()
+        setLoading(true)
+        setTimeout(function(){
+          setLoading(false)
+          notifySuccess()
+        }, 1000)
         setTimeout(function() {
           history.replace("/login");
         }, 7500);
@@ -72,6 +76,7 @@ function Signup() {
     <div className="card login-sign-Card">
       <h1>Signup</h1>
       <br />
+      {isLoading ? <Spinner />: null}
       <Form onSubmit={handleFormSubmit}>
         <div>
           <label>Name:</label>
