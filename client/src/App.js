@@ -6,33 +6,61 @@ import Wrapper from "./components/Wrapper";
 import Landing from "./pages/Landing";
 import Login from "./pages/Login";
 import About from "./pages/About";
-import signUp from "./pages/signUp";
+import SignUp from "./pages/signUp";
 import Home from "./pages/Home";
 import Chart from "./components/Chart";
 import { AuthProvider } from "./utils/auth";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Tips from "./pages/Tips";
+import { AnimatePresence, motion } from "framer-motion";//module to animate page navigation 
 
+//the motion.div with parameters define the type of animation, here the page slides from left to right 
 
-function App() {  
+function App() {
   return (
     <AuthProvider>
-      <Router basename="/KnoPressure-App">
-      <div className="App">
-        <Wrapper>  
-        <Route exact path="/" component={Landing} />   
-            <ProtectedRoute exact path="/Chart" component={Chart} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/signup" component={signUp} />
-            <ProtectedRoute exact path="/home" component={Home} />
-            <ProtectedRoute exact path="/about" component={About} />   
-            <ProtectedRoute exact path="/tips" component={Tips} />     
-        </Wrapper>
-      </div>
-      </Router>
+      <AnimatePresence exitBeforeEnter>
+        <Router>
+          <div className="App">
+            <Wrapper>
+              <Route exact path="/">
+                <motion.div initial={{ width: 0 }} animate={{ width: "100%" }} exit={{ x: "100%", transition: { duration: 0.1 } }}>
+                  <Landing />
+                </motion.div>
+              </Route>
+              <ProtectedRoute exact path="/Chart" component={Chart} />
+              <Route exact path="/login">
+                <motion.div initial={{ width: 0 }} animate={{ width: "100%" }} exit={{ x: "100%", transition: { duration: 0.1 } }}>
+                  <Login />
+                </motion.div>
+              </Route>
+              <Route exact path="/signup">
+                <motion.div initial={{ width: 0 }} animate={{ width: "100%" }} exit={{ x: "100%", transition: { duration: 0.1 } }}>
+                  <SignUp />
+                </motion.div>
+              </Route>
+              <ProtectedRoute exact path="/home">
+                <motion.div initial={{ width: 0 }} animate={{ width: "100%" }} exit={{ x: "100%", transition: { duration: 0.1 } }}>
+                  <Home />
+                </motion.div>
+              </ProtectedRoute>
+              <ProtectedRoute exact path="/about">
+                <motion.div initial={{ width: 0 }} animate={{ width: "100%" }} exit={{ x: "100%", transition: { duration: 0.1 } }}>
+                  <About />
+                </motion.div>
+              </ProtectedRoute>
+              <ProtectedRoute exact path="/tips">
+                <motion.div initial={{ width: 0 }} animate={{ width: "100%" }} exit={{ x: "100%", transition: { duration: 0.1 } }}>
+                  <Tips />
+                </motion.div>
+              </ProtectedRoute>
+            </Wrapper>
+          </div>
+        </Router>
+      </AnimatePresence>
     </AuthProvider>
   );
-  
+
 }
 
 

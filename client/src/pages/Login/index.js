@@ -36,7 +36,7 @@ function Login() {
         setLoading(true);//to dispaly the loading spinner 
         setTimeout(() => {
           history.push("/home");
-        }, 2000);
+        }, 1000);
       })
       .catch(err => notify(err));
   };
