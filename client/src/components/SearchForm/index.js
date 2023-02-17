@@ -171,14 +171,14 @@ function SearchForm() {
         >
           Submit
         </FormBtn>
-        <div className="card" style={{ backgroundColor: sevenDaybackgroundColor, color: 'white', marginLeft: "29%", marginRight: "29%", padding: "15px" }}>
+        <div className="card" style={{ backgroundColor: sevenDaybackgroundColor, color: 'white',textShadow: "-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black", marginLeft: "29%", marginRight: "29%", padding: "15px" }}>
           {sevenDayAverage.systolic && sevenDayAverage.diastolic ? (
             <h6> Your 7 Day Average: {sevenDayAverage.systolic} / {sevenDayAverage.diastolic} mmHg</h6>
           ) : (<h6> No data available. Please add readings to see 7 day averages.</h6>
           )}
         </div>
         <br />
-        <div className="card" style={{ backgroundColor: monthBackgroundColor, color: 'white', marginLeft: "29%", marginRight: "29%", padding: "15px" }}>
+        <div className="card" style={{ backgroundColor: "yellow", color: 'white', textShadow: "-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black", marginLeft: "29%", marginRight: "29%", padding: "15px" }}>
           {monthAverage.systolic && monthAverage.diastolic ? (
             <h6> Your Monthly average: {monthAverage.systolic} / {monthAverage.diastolic} mmHg</h6>
           ) : (
