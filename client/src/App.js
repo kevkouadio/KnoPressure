@@ -13,6 +13,7 @@ import { AuthProvider } from "./utils/auth";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Tips from "./pages/Tips";
 import { AnimatePresence, motion } from "framer-motion";//module to animate page navigation 
+import ChartPage from "./pages/Table-Chart";
 
 //the motion.div with parameters define the type of animation, here the page slides from left to right 
 
@@ -28,7 +29,7 @@ function App() {
                   <Landing />
                 </motion.div>
               </Route>
-              <ProtectedRoute exact path="/Chart" component={Chart} />
+              <ProtectedRoute exact path="/Chart" component={ChartPage} />
               <Route exact path="/login">
                 <motion.div initial={{ width: 0 }} animate={{ width: "100%" }} exit={{ x: "100%", transition: { duration: 0.1 } }}>
                   <Login />

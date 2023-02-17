@@ -32,6 +32,7 @@ body {
   color: rgb(17, 8, 17);
   text-align: center;
   border-bottom: 10px solid purple;
+  /* height: 100vh; */
 }
 
 p {
