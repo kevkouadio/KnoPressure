@@ -178,7 +178,7 @@ function SearchForm() {
           )}
         </div>
         <br />
-        <div className="card" style={{ backgroundColor: "yellow", color: 'white', textShadow: "-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black", marginLeft: "29%", marginRight: "29%", padding: "15px" }}>
+        <div className="card" style={{ backgroundColor: monthBackgroundColor, color: 'white', textShadow: "-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black", marginLeft: "29%", marginRight: "29%", padding: "15px" }}>
           {monthAverage.systolic && monthAverage.diastolic ? (
             <h6> Your Monthly average: {monthAverage.systolic} / {monthAverage.diastolic} mmHg</h6>
           ) : (
