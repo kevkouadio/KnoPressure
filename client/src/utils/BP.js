@@ -12,14 +12,14 @@ export default {
   },
   //Deletes a single taskBP data with the given id
   deleteBP: function (id) {
-    return axios.delete("/api/bp/" + id);
+    return axios.delete(`/api/bp/${id}`);
   },
   //Gets a single BP data with the given id
   getBP: function (id) {
-    return axios.post("/api/bp" + id);
+    return axios.post(`/api/bp/${id}`);
   },
   //Updates a single BP data with the given id
-  updateBP: function (id) {
-    return axios.put("/api/bp/" + id);
-  },
+  updateBP: function (id, data) {
+    return axios.put(`/api/bp/${id}`, data);
+  }
 };

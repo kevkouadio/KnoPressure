@@ -1,0 +1,38 @@
+/* .MuiTableCell-alignLeft {
+    text-align: center !important;
+} */
+
+.MuiPaper-root,.MuiTableCell-head {
+    background-color: lavender !important;
+}
+
+.MuiTableCell-head {
+    font-weight: bold !important;
+}
+
+.MuiTableCell-root {
+    text-align: center !important;
+    align-items: center !important;
+}
+
+/* .MuiTableCell-paddingNone {
+    align-items: center !important;
+    text-align: center !important;
+    padding-left: auto !important;
+    padding-right: auto !important;
+  }
+
+.MuiTableCell-paddingNone > div {
+    text-align: center !important;
+  }
+
+  .MuiIconButton-colorInherit {
+    color: inherit;
+    padding-left: auto !important;
+    padding-right: auto !important;
+    text-align: center !important;
+} */
+
+.MuiTable-root tr td:last-child div {
+    justify-content: center;
+  }

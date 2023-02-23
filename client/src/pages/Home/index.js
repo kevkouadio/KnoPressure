@@ -7,6 +7,7 @@ import Footer from "../../components/Footer";
 import { useAuth } from "../../utils/auth";
 import SearchForm from "../../components/SearchForm";
 import Row from "../../components/Row";
+import Table from "../../components/Table";
 
 function Home() {
 
@@ -21,6 +22,7 @@ function Home() {
                     <SearchForm />
                     <BPImage />
                 </Row>
+                <Table />
             </Container>
             <Footer />
         </>
