@@ -2,13 +2,15 @@ import React, { useState, useEffect } from "react";
 import MaterialTable from "material-table";
 import { MuiPickersUtilsProvider, KeyboardDateTimePicker } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
+import * as XLSX from 'xlsx';
 import API from "../../utils/BP";
+import { CloudDownload } from '@material-ui/icons';
 import "./style.css"
 
 function Table() {
     const [BP, setBP] = useState([])
 
-    //add new bp data on table
+    //format the date and time
     function formatDate(date) {
         const month = date.toLocaleString('default', { month: 'short' });
         const day = date.getDate();
@@ -19,7 +21,7 @@ function Table() {
         const meridiem = hour >= 12 ? "PM" : "AM";
         const hour12 = hour % 12 || 12;
         return `${month} ${day}, ${year}, ${hour12}:${minute} ${meridiem}`;
-      }      
+    }
 
     //add new bp data on table
     function addBPData(newBPData) {
@@ -62,6 +64,13 @@ function Table() {
             .catch(err => console.log(err));
     };
 
+    // custom date sorting function
+    const customSort = (a, b) => {
+        const aDate = new Date(a.date).getTime();
+        const bDate = new Date(b.date).getTime();
+
+        return aDate - bDate;
+    };
 
     const columns = [
         { title: "Systolic", field: "Systolic" },
@@ -69,6 +78,8 @@ function Table() {
         {
             title: "Date",
             field: "date",
+            // calling the custom sort function
+            sortComparator: customSort,
             //component to select the date and time in the table 
             editComponent: ({ value, onChange }) => (
                 <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -91,6 +102,27 @@ function Table() {
             ),
         },
     ];
+    //function to export table data to excel sheet
+    const downloadExcel = () => {
+        // Remove unwanted columns from data
+        const newData = BP.map(row => {
+          const { _id, userID, __v, ...newRow } = row; // Destructure and remove unwanted fields
+          delete newRow.tableData; // Remove additional field added by Material Table
+          return newRow;
+        });
+      
+        // Create worksheet and workbook
+        const workSheet = XLSX.utils.json_to_sheet(newData);
+        const workBook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(workBook, workSheet, "BP");
+      
+        //Buffer
+        let buf = XLSX.write(workBook, { bookType: "xlsx", type: "buffer" });
+        //Binary string
+        XLSX.write(workBook, { bookType: "xlsx", type: "binary" });
+        //Download
+        XLSX.writeFile(workBook, "BP_readings.xlsx");
+      }         
 
     return (
         <MaterialTable
@@ -102,8 +134,18 @@ function Table() {
                 rowStyle: {
                     backgroundColor: 'plum',
                     color: 'white',
-                }
+                },
+                filtering: true,
+                sorting: true,
             }}
+            actions={[
+                {
+                  icon: () => <CloudDownload />,
+                  tooltip: "Export to Excel",
+                  onClick: () => downloadExcel(),
+                  isFreeAction: true
+                }
+              ]}
             editable={{
                 onRowAdd: (newData) =>
                     new Promise((resolve, reject) => {
@@ -140,8 +182,6 @@ function Table() {
                         }, 1000);
                     }),
             }}
-
-
         />
     )
 }
