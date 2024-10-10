@@ -86,6 +86,8 @@ function Login() {
         <ToastContainer />
       </Form>
       <br />
+      <Link className="login-sign-link" to="/forgotPassword"> Forgot Password</Link>
+      <br />
       Don't have an account?<Link className="login-sign-link" to="/signup"> Signup</Link>
     </div>
   );

@@ -14,6 +14,8 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Tips from "./pages/Tips";
 import { AnimatePresence, motion } from "framer-motion";//module to animate page navigation 
 import ChartPage from "./pages/Table-Chart";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
 
 //the motion.div with parameters define the type of animation, here the page slides from left to right 
 
@@ -38,6 +40,16 @@ function App() {
               <Route exact path="/signup">
                 <motion.div initial={{ width: 0 }} animate={{ width: "100%" }} exit={{ x: "100%", transition: { duration: 0.1 } }}>
                   <SignUp />
+                </motion.div>
+              </Route>
+              <Route exact path="/forgotPassword">
+                <motion.div initial={{ width: 0 }} animate={{ width: "100%" }} exit={{ x: "100%", transition: { duration: 0.1 } }}>
+                  <ForgotPassword />
+                </motion.div>
+              </Route>
+              <Route exact path="/resetPassword">
+                <motion.div initial={{ width: 0 }} animate={{ width: "100%" }} exit={{ x: "100%", transition: { duration: 0.1 } }}>
+                  <ResetPassword />
                 </motion.div>
               </Route>
               <ProtectedRoute exact path="/home">

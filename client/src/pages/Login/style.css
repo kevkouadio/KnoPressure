@@ -14,14 +14,14 @@ body {
 .svg-inline--fa {
     position: absolute;
     right: 10px;
-    top: 60%;
+    top: 53%;
     transform: translateY(-50%);
     cursor: pointer;
     color: blue;
   }
  
 .login-sign-link {
-    width: 25%; 
+    /* width: 25%;  */
     margin-left: auto;
     margin-right: auto;
     text-decoration: underline;
