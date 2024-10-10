@@ -32,6 +32,13 @@ KnoPressure is a blood pressure app built using React.js.  This App will allow y
   to create the node_modules folder.  If running in a windows or Mac environment,  ensure that you have a .env file present with this information, (For Mac - SERVER_SECRET = 123456):  (for Windows SERVER_SECRET = 123456
   PORT=3001
   NODE_ENV=development)
+  In your .env file, add configurations for the JWT secret key and SMTP details for email sending (update these values with your actual credentials):
+  SERVER_SECRET = 123456
+  SMTP_HOST=smtp.your-email-provider.com
+  SMTP_PORT=587
+  SMTP_USER=your-email@example.com
+  SMTP_PASS=your-email-password
+
 
   * Run `npm run start`, this connects you to the PORT 3000 and also opens up the KnoPressure Application in the browser.
   * Once the App opens, it will render on the `Landing Page` and from here you will need to Sign-Up if this is your first time, by adding a Username, your Email and a Password, or `Login`, if you had already done so.  When you sign up, the information is added to the Robo3T database.  In Logging in, you will be redirected to the `Home Page`.  On the `Home Page`, there are 2 entry boxes, an image that is color coded that provides blood pressure ranges and those ranges will advise if your pressure Normal, Elevated, or High, also the Chart which will reflect similar information. Wenter some Blood Pressure information into the text boxes.  Systolic is the higher number and Diastolic is the lower number of a blood pressure reading 
