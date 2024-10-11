@@ -1,18 +1,36 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Input } from '../../components/Form';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Spinner from "../../components/Sipnner";
 
 const ForgotPassword = () => {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
+    const [isLoading, setLoading] = useState(false);
+
+    const notify = () => toast.success("Reset password link sent!", {
+        position: "top-center",
+        autoClose: 6000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    });
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true); // Start loading
         try {
             const response = await axios.post('/requestPasswordReset', { email });
             setMessage(response.data);
+            notify();
         } catch (error) {
-            setMessage(error.response.data);
+            setMessage(error.response?.data || "An error occurred");
+        } finally {
+            setLoading(false); // Stop loading
         }
     };
 
@@ -34,8 +52,12 @@ const ForgotPassword = () => {
                         required
                     />
                 </div>
-                <button type="submit" className="btn btn-primary">Request Reset Link</button>
+                <button type="submit" className="btn btn-primary" disabled={isLoading}>
+                    {isLoading ? 'Loading...' : 'Request Reset Link'}
+                </button>
+                <ToastContainer />
             </form>
+            {isLoading && <Spinner/>} {/* Display Spinner while loading */}
             {message && <p className="mt-3">{message}</p>}
         </div>
     );

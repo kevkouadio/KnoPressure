@@ -12,4 +12,17 @@ code {
     monospace;
 }
 
+#icon-resetPassword {
+  top: 37%;
+}
+
+.mt-3 {
+  background-color: blueviolet;
+  color: aliceblue;
+}
+
+#reset-password-login-link{
+  color: yellowgreen;
+}
+
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');

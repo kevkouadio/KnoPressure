@@ -9,7 +9,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import Spinner from "../../components/Sipnner";
 
-
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,7 +17,7 @@ function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setLoading] = useState(false);
 
-  const notify = () => toast.error("Incorrect email and/or password !", {
+  const notify = () => toast.error("Incorrect email and/or password!", {
     position: "top-center",
     autoClose: 6000,
     hideProgressBar: false,
@@ -28,31 +27,28 @@ function Login() {
     progress: undefined,
   });
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
-    login(email, password)
-      // navigate to the home page
-      .then(() => {
-        setLoading(true);//to dispaly the loading spinner 
-        setTimeout(() => {
-          history.push("/home");
-        }, 1000);
-      })
-      .catch(err => notify(err));
+    setLoading(true); // Start loading
+    try {
+      await login(email, password);
+      history.push("/home"); // Navigate to the home page after successful login
+    } catch (err) {
+      notify(err);
+    } finally {
+      setLoading(false); // Stop loading
+    }
   };
 
-  
   if (isLoggedIn) {
-    setInterval(() => {
-      return <Redirect to="/home" />;
-    }, 2000);// This will redirect to "/home" after 2000 milliseconds (2 seconds)
+    return <Redirect to="/home" />;
   }
 
   return (
     <div className="card login-sign-Card">
       <h1>Login</h1>
       <br />
-      {isLoading ? <Spinner />: null}
+      {isLoading && <Spinner />} {/* Display Spinner while loading */}
       <Form onSubmit={handleFormSubmit}>
         <div>
           <label>Email:</label>
@@ -82,7 +78,9 @@ function Login() {
             onClick={() => setShowPassword(!showPassword)}
           />
         </div>
-        <button className="btn btn-primary" type="submit">Submit</button>
+        <button className="btn btn-primary" type="submit" disabled={isLoading}>
+          {isLoading ? 'Loading...' : 'Submit'}
+        </button>
         <ToastContainer />
       </Form>
       <br />
