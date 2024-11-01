@@ -5,22 +5,6 @@
     text-decoration: none;
     list-style: none;
   }
-  
-  /* html,
-  body {
-    height: 100%;
-  } */
-  
-/* body {
-    
-    font-size: 15px;
-    color: black; 
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-} */
-
-/* .padding {
-    padding: 20px;
-} */
 
 /* Set the spacing between the links */
 .navbar ul {
@@ -103,4 +87,13 @@ hr {
 .card-body {
   background-color: rgb(235, 204, 235);
 }
- 
+
+.custom-img {
+  width: 100%;
+  object-fit: cover; 
+}
+
+.linkedin-icon {
+  height: 40px;
+  width: 40px;
+}

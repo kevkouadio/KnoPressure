@@ -149,20 +149,20 @@ function SearchForm() {
         <p>What are your numbers today? Let's find out if its normal</p>
         <Row>
           <div className="col-sm-4">
-            <label id="systolic-label">Systolic/top number</label>
             <Input
               onChange={handleInputChange}
               name="systolic"
               placeholder="Systolic (required)"
             />
+            <label id="systolic-label">Systolic/top number</label>
           </div>
           <div className="col-sm-4">
-            <label id="diastolic-label" for="Diastolic">Diastolic/bottom number</label>
             <Input
               onChange={handleInputChange}
               name="diastolic"
               placeholder="Diastolic (required)"
             />
+            <label id="diastolic-label" for="Diastolic">Diastolic/bottom number</label>
           </div>
         </Row>
         <FormBtn
