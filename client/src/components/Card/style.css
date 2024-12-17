@@ -2,16 +2,29 @@
     color: black;
     float: left;
     margin: 30px;
-    display: block;
+    /* display: block; */
+    width: 18rem;
 }
 
 h5 {
     text-align: center;
-    background-color: blue;
-    color: white;
+    /* background-color: blue; */
+    /* color: white; */
 }
 
-#pCard:hover {
+/* #pCard:hover {
     transform: scale(1.2);
     
+  } */
+
+  .card-body {
+    padding: .5rem;
+  }
+
+  .read-more-btn {
+    background: none;
+    color: blue;
+    border: none;
+    cursor: pointer;
+    padding: 0;
   }
